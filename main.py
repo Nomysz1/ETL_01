@@ -1,8 +1,11 @@
 import duckdb
 
+#CONSTANTS
+AV_THREADS = 2
+
 def create_db(db_name: str):
     try:
-        db = duckdb.connect(db_name, config={'threads': 2})
+        db = duckdb.connect(db_name, config={'threads': AV_THREADS})
     except Exception as e:
         print(e)
     finally:
